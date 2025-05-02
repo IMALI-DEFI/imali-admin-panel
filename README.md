@@ -10,12 +10,12 @@ A production-ready **Web3 Admin Dashboard** for DeFi platforms and token project
 
 ## ✨ Features
 
-- ✅ Wallet connect (MetaMask + WalletConnect ready)
-- ✅ Smart contract actions: Mint, Airdrop, Buyback, Add Liquidity
-- ✅ GA4 pageview + event tracking
-- ✅ Looker Studio embedded dashboard
-- ✅ Social sharing across major platforms
-- ✅ Schedule posts and log internal actions
+* ✅ Wallet connect (MetaMask + WalletConnect ready)
+* ✅ Smart contract actions: Mint, Airdrop, Buyback, Add Liquidity
+* ✅ GA4 pageview + event tracking
+* ✅ Looker Studio embedded dashboard
+* ✅ Social sharing across major platforms
+* ✅ Schedule posts and log internal actions
 
 ---
 
@@ -43,17 +43,63 @@ function App() {
 
 ---
 
+## 🛠️ Step-by-Step Setup
+
+1. **Install the package:**
+
+   ```bash
+   npm install imali-admin-panel
+   ```
+
+2. **Wrap your app with `WalletProvider`:**
+
+   ```jsx
+   import { WalletProvider } from 'imali-admin-panel';
+
+   <WalletProvider>
+     <App />
+   </WalletProvider>
+   ```
+
+3. **Place the `AdminPanel` in your route/page:**
+
+   ```jsx
+   import { AdminPanel } from 'imali-admin-panel';
+
+   <AdminPanel />
+   ```
+
+4. **Customize Smart Contracts:**
+
+   * Go to `getContractInstance.js`
+   * Replace placeholder addresses and ABIs with your own deployed contracts:
+
+     ```js
+     IMALIToken: {
+       address: "0xYourToken",
+       abi: [...] // Your ABI here
+     }
+     ```
+
+5. **Update Looker Dashboard (Optional):**
+
+   * Replace the `iframe` `src` with your own GA4-connected Looker Studio dashboard
+
+---
+
 ## 📊 Live Analytics
 
-This panel includes an embedded Looker Studio dashboard with live traffic and performance metrics.  
+This panel includes an embedded Looker Studio dashboard with live traffic and performance metrics.
+
 > You can replace the `iframe` URL with your own GA4-connected dashboard.
 
 ---
 
 ## 🔌 Contract Integration
 
-Update `getContractInstance.js` with your deployed contract ABIs and addresses.  
+Update `getContractInstance.js` with your deployed contract ABIs and addresses.
 Example:
+
 ```js
 export const getContractInstance = async (name, signerOrProvider) => {
   const address = {
@@ -85,9 +131,10 @@ MIT — Free to modify and resell with attribution.
 
 ## 🔗 Links
 
-- 🌐 [Live Demo](https://imali-defi.com)
-- 🛠 [Smart Contract Repo](https://github.com/IMALI-DEFI/contracts)
-- 📦 [NPM Package](https://www.npmjs.com/package/imali-admin-panel)
+* 🌐 [Live Demo](https://imali-defi.com)
+* 🛠 [Smart Contract Repo](https://github.com/IMALI-DEFI/contracts)
+* 📦 [NPM Package](https://www.npmjs.com/package/imali-admin-panel)
 
 ---
-Made with 🧠 by [Wayne Griffin](https://linkedin.com/in/wayne-l-griffin-mba)
+
+Made with 🧠 by [Wayne Griffin](https://linkedin.com/in/wayne-l-griffin-mba).
